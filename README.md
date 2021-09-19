@@ -1,1 +1,3 @@
-# nest-next-template
+```
+docker-compose up
+```
