@@ -10,6 +10,7 @@ services:
     #command: tail -F anything
     volumes:
       - ./front:/app
+      - node_modules
   backend:
     restart: always
     build:
@@ -28,3 +29,4 @@ services:
       - ./.env
     volumes:
       - ./db_data:/var/lib/postgresql/data
+      - node_modules
