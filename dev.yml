@@ -10,13 +10,14 @@ services:
     #command: tail -F anything
     volumes:
       - ./front:/app
-      - node_modules
+      - app/node_modules
   backend:
     restart: always
     build:
         context: ./backend
     volumes:
       - ./backend:/app
+      - app/node_modules
     ports:
         - 3001:3001
     command: sh -c "yarn start:dev"
@@ -29,4 +30,3 @@ services:
       - ./.env
     volumes:
       - ./db_data:/var/lib/postgresql/data
-      - node_modules
